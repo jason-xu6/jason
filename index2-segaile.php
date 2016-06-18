@@ -1,18 +1,3 @@
-<?php
- header("content-type:text/html;charset:utf-8");
-$filename='mesage.txt';
-if (file_exists($filename)&&filesize($filename)>0) {
-	$string=file_get_contents($filename);
-	$mesInfo=unserialize($string);
-	if (!is_array($mesInfo)) {
-		echo "出错了，请重新添加";
-		echo "<meta http-equiv='refresh' content='3;url=postform.html'/>";
-	}
-}else{
-	echo "没有留言请添加；<br>3秒钟之后跳转到添加页面";
-	echo "<meta http-equiv='refresh' content='3;url=postform.html'/>";
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -185,9 +170,6 @@ if (file_exists($filename)&&filesize($filename)>0) {
 		box-shadow: 5px 5px 5px;
 		border-radius: 5px 5px;
 	}
-	#centent_nav .active{
-		background-color:#2a7b97;
-	}
 	</style>
 	<script>
 		window.onload=function(){
@@ -206,6 +188,31 @@ if (file_exists($filename)&&filesize($filename)>0) {
 	       	   	this.style.color=oldColor1;
 	       	   };
 	       }
+		};
+	</script>
+	<script>
+		window.onload=function()
+		{
+			var oSbtn=document.getElementById("seach_btn");
+			var oTab=document.getElementById("tab");
+			var oSeach=document.getElementById("center_seach");
+		         oSbtn.onclick=function(){
+
+             	for (var i = 0; i<oTab.tBodies[0].rows.length; i++) {
+             		var otext=oTab.tBodies[0].rows[i].cells[1].innerHTML.toLowerCase();
+             		var oname=oSeach.value.toLowerCase();
+                    
+                    var arr=oname.split(" ");
+                    oTab.tBodies[0].rows[i].style.background="";
+                    oTab.tBodies[0].rows[i].style.color="";
+                    for (var j = 0; j<arr.length; j++) {
+                    	if (otext.search(arr[j])!=-1) {
+                    		oTab.tBodies[0].rows[i].style.background="red";
+                    		oTab.tBodies[0].rows[i].style.color="#fff";
+                    	}
+                    }
+             }
+            };
 		};
 	</script>
 </head>
@@ -230,20 +237,23 @@ if (file_exists($filename)&&filesize($filename)>0) {
 			<div id="centent_nav">
 			    <p>仓库管理人员，您好</p>
 				<ul>
-					<li><a href="" class="active">主页</a></li>
-					<li><a href="index2-se.php">库存查询</a></li>
-					<li><a href="index2-in.php">商品入库</a></li>
-					<li><a href="index2-de.php">商品出库</a></li>
+					<li><a href="index2.php">主页</a></li>
+					<li><a href="">库存查询</a></li>
+					<li><a href="">商品入库</a></li>
+					<li><a href="">商品出库</a></li>
 					<li><a href="">关于退货</a></li>
 					<li><a href="">关于我们</a></li>
 				</ul>
 			</div>
 			<div id="centent_center">
+			    <p>
+				    <input type="text" id="center_seach">
+				    <input type="button" value="搜索商品" id="seach_btn">
+			    </p>
 				<form action="">
-					<table border="1" width="100%" height="" cellpadding="0" cellspacing="0" bgcolor="#31a2c7" id="tab" style="text-align: center">
+					<table border="1" width="80%" height="80%" cellpadding="0" cellspacing="0" bgcolor="#31a2c7" id="tab" style="text-align: center">
 						<thead>
-							<tr style="height: 30px">
-							    <th>序号</th>
+							<tr>
 								<th>商品编号</th>
 								<th>商品名称</th>
 								<th>商品价格</th>
@@ -251,16 +261,16 @@ if (file_exists($filename)&&filesize($filename)>0) {
 							</tr>
 						</thead>
 						<tbody>
-								<?php $i=1; foreach ($mesInfo as $now):?>
+							<?php foreach ($users as $user) {
 								
-								    <tr style="height:35px">
-								        <td><?php  echo $i; ?></td>
-										<td><?php echo $now['num']; ?></td>
-										<td><?php echo $now['username']; ?></td>
-										<td><?php echo $now['price']; ?></td>
-										<td><?php echo $now['surplus']; ?></td>
-									</tr>
-							    <?php $i++; endforeach;?>
+							 ?>
+							<tr>
+								<td><?php echo $user['id']; ?></td>
+								<td><?php echo $user['username']; ?></td>
+								<td><?php echo $user['age']; ?></td>
+								<td><?php echo $user['sex']; ?></td>
+							</tr>
+							<?php } ?>
 						</tbody>
 					</table>
 				</form>

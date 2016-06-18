@@ -230,10 +230,10 @@ if (file_exists($filename)&&filesize($filename)>0) {
 			<div id="centent_nav">
 			    <p>仓库管理人员，您好</p>
 				<ul>
-					<li><a href="" class="active">主页</a></li>
+					<li><a href="index2.php">主页</a></li>
 					<li><a href="index2-se.php">库存查询</a></li>
 					<li><a href="index2-in.php">商品入库</a></li>
-					<li><a href="index2-de.php">商品出库</a></li>
+					<li><a href="" class="active">商品出库</a></li>
 					<li><a href="">关于退货</a></li>
 					<li><a href="">关于我们</a></li>
 				</ul>
@@ -248,6 +248,7 @@ if (file_exists($filename)&&filesize($filename)>0) {
 								<th>商品名称</th>
 								<th>商品价格</th>
 								<th>商品库存</th>
+								<th>操作</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -259,6 +260,7 @@ if (file_exists($filename)&&filesize($filename)>0) {
 										<td><?php echo $now['username']; ?></td>
 										<td><?php echo $now['price']; ?></td>
 										<td><?php echo $now['surplus']; ?></td>
+										<td>删除</td>
 									</tr>
 							    <?php $i++; endforeach;?>
 						</tbody>

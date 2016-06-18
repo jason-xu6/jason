@@ -190,6 +190,7 @@ if (file_exists($filename)&&filesize($filename)>0) {
 	}
 	</style>
 	<script>
+
 		window.onload=function(){
 	       var oTab=document.getElementById("tab");
 	       var oldColor="";
@@ -207,6 +208,57 @@ if (file_exists($filename)&&filesize($filename)>0) {
 	       	   };
 	       }
 		};
+	</script>
+	<script>
+		window.onload=function()
+		{
+			
+		};
+	</script>
+	<script>
+		window.onload=function(){
+       var oTab=document.getElementById("tab");
+       var oldColor="";
+       var oldColor1="";
+       var oSbtn=document.getElementById("seach_btn");
+	   var oSeach=document.getElementById("center_seach");
+		    
+		    oSbtn.onclick=function(){
+		    	if (oSeach.value=="") {
+		    		 oTab.tBodies[0].rows[i].style.background="";
+		    		 oTab.tBodies[0].rows[i].style.color="";
+		    	}
+
+             	for (var i = 0; i<oTab.tBodies[0].rows.length; i++) {
+             		var otext=oTab.tBodies[0].rows[i].cells[2].innerHTML.toLowerCase();
+             		var oname=oSeach.value.toLowerCase();
+                    
+                    var arr=oname.split(" ");
+                    oTab.tBodies[0].rows[i].style.background="";
+                    oTab.tBodies[0].rows[i].style.color="";
+                    for (var j = 0; j<arr.length; j++) {
+                    	if (otext.search(arr[j])!=-1) {
+                    		oTab.tBodies[0].rows[i].style.background="red";
+                    		oTab.tBodies[0].rows[i].style.color="#fff";
+                    	}
+                    }
+             }
+            };
+
+       for (var i = 0; i<oTab.tBodies[0].rows.length; i++) {
+       	   oTab.tBodies[0].rows[i].onmouseover=function(){
+       	    oldColor=this.style.background;
+       	    oldColor1=this.style.color;
+       	   	this.style.background="#013749";
+       	   	this.style.color="#fff";
+       	   };
+       	   oTab.tBodies[0].rows[i].onmouseout=function(){
+       	   	this.style.background=oldColor;
+       	   	this.style.color=oldColor1;
+       	   };
+       }
+
+       };
 	</script>
 </head>
 <body>
@@ -230,8 +282,8 @@ if (file_exists($filename)&&filesize($filename)>0) {
 			<div id="centent_nav">
 			    <p>仓库管理人员，您好</p>
 				<ul>
-					<li><a href="" class="active">主页</a></li>
-					<li><a href="index2-se.php">库存查询</a></li>
+					<li><a href="index2.php">主页</a></li>
+					<li><a href="" class="active">库存查询</a></li>
 					<li><a href="index2-in.php">商品入库</a></li>
 					<li><a href="index2-de.php">商品出库</a></li>
 					<li><a href="">关于退货</a></li>
@@ -239,10 +291,14 @@ if (file_exists($filename)&&filesize($filename)>0) {
 				</ul>
 			</div>
 			<div id="centent_center">
+			    <p>
+				    <input type="text" id="center_seach">
+				    <input type="button" value="搜索商品" id="seach_btn">
+			    </p>
 				<form action="">
 					<table border="1" width="100%" height="" cellpadding="0" cellspacing="0" bgcolor="#31a2c7" id="tab" style="text-align: center">
 						<thead>
-							<tr style="height: 30px">
+							<tr>
 							    <th>序号</th>
 								<th>商品编号</th>
 								<th>商品名称</th>

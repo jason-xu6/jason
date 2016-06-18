@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		window.onload=function(){
+          var oBtn=document.getElementById("btn");
+          var oName=document.getElementById("name");
+          var oTab=document.getElementById("tab");
+             
+             oBtn.onclick=function(){
+             	for (var i = 0; i<oTab.tBodies[0].rows.length; i++) {
+             		var otext=oTab.tBodies[0].rows[i].cells[0].innerHTML.toLowerCase();
+             		var oname=oName.value.toLowerCase();
+                    
+                    var arr=oname.split(" ");
+                    oTab.tBodies[0].rows[i].style.display="none";
+                    for (var j = 0; j<arr.length; j++) {
+                    	if (otext.search(arr[j])!=-1) {
+                    		oTab.tBodies[0].rows[i].style.display="block";
+                    	}
+                    }
+             }
+            };};
+            
+     // oBtn.onclick=function(){
+     // 	var arr=[];
+     // 	for (var i = 0; i<oTab.tBodies[0].rows.length; i++) {
+     // 		arr[i]=oTab.tBodies[0].rows[i];
+     // 	}
+     // 	arr.sort(function(tr1,tr2)
+     // 		{
+     //                var n1=parseInt(tr1.cells[1].innerHTML);
+     //                var n2=parseInt(tr2.cells[1].innerHTML);
+
+     //                return n1-n2;
+     // 		});
+     // 	for (var i = 0; i <arr.length; i++) {
+     // 		oTab.tBodies[0].appendChild(arr[i]);
+     // 	}
+     // };};    
+        
+	</script>
+</head>
+<body>        
+              <input type="text" id="name" >
+              <input type="button" value="搜索" id="btn">
+	<form action="trtd.php" method="GET">
+		<table id="tab" border="1 solid" cellspacing="0" cellpadding="0" width="300px">
+			 <thead>
+			 	<tr>
+			 		<th>名字</th>
+			 		<th>年龄</th>
+			 	</tr>
+			 </thead>
+			<tbody>
+				<tr>
+					<td>张三</td>
+					<td>19</td>
+				</tr>
+				<tr>
+					<td>李四</td>
+					<td>190</td>
+				</tr>
+				<tr>
+					<td>王五</td>
+					<td>123</td>
+				</tr>
+				<tr>
+					<td>jason</td>
+					<td>239</td>
+				</tr>
+			</tbody>
+		</table>
+		<input type="submit" value="提交">
+	</form>
+</body>
+</html>

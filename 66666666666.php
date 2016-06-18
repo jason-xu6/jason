@@ -1,17 +1,11 @@
 <?php
   header("content-type:text/html;charset:utf-8");
-$num=$_POST['num'];
-$username=$_POST['username'];
-$price=$_POST['price'];
-$surplus=$_POST['surplus'];
-$act=$_GET['act'];
 $filename='mesage.txt';
-if($act=='addMessage'){
      
-     if (file_exists($filename)&&filesize($filename)>0) {
+     
      	$string=file_get_contents($filename);
      	$mesInfo=unserialize($string);
-     }
+     
 
 		$mesInfo[]=compact('num','username','price','surplus');
 		$mesInfo=serialize($mesInfo);
@@ -21,4 +15,3 @@ if($act=='addMessage'){
 			echo "添加失败<br><a href='index2-in.php'>重新添加</a>";
 		}
 	
-};
