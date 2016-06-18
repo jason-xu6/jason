@@ -252,15 +252,15 @@ if (file_exists($filename)&&filesize($filename)>0) {
 							</tr>
 						</thead>
 						<tbody>
-								<?php $i=1; foreach ($mesInfo as $now):?>
+								<?php $i=1; foreach ($mesInfo as $key=>$now):?>
 								
-								    <tr style="height:35px">
+								    <tr>
 								        <td><?php  echo $i; ?></td>
 										<td><?php echo $now['num']; ?></td>
 										<td><?php echo $now['username']; ?></td>
 										<td><?php echo $now['price']; ?></td>
 										<td><?php echo $now['surplus']; ?></td>
-										<td>删除</td>
+										<td><a href="delete.php?id=<?php echo $key; ?>">出库</a></td>
 									</tr>
 							    <?php $i++; endforeach;?>
 						</tbody>

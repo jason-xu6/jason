@@ -4,14 +4,14 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<script>
-		var o=new Object();
-		Object.defineProperties(o, {
-             height:{
-             	value:100,
-             	configurable:false,
-             	writable:true,
-             }
-	       	});
+		function Person()
+		{
+			this.age=20;
+			this.name="jason";
+		}
+		Person.prototype.jj="xiao";
+		var p=new Person();
+		var p1=new Person();
 	</script>
 </head>
 <body>
