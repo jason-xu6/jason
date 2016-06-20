@@ -227,9 +227,8 @@ if (file_exists($filename)&&filesize($filename)>0) {
 		    	if (oSeach.value=="") {
 		    		 oTab.tBodies[0].rows[i].style.background="";
 		    		 oTab.tBodies[0].rows[i].style.color="";
-		    	}
-
-             	for (var i = 0; i<oTab.tBodies[0].rows.length; i++) {
+		    	}else {
+		    		for (var i = 0; i<oTab.tBodies[0].rows.length; i++) {
              		var otext=oTab.tBodies[0].rows[i].cells[2].innerHTML.toLowerCase();
              		var oname=oSeach.value.toLowerCase();
                     
@@ -243,6 +242,7 @@ if (file_exists($filename)&&filesize($filename)>0) {
                     	}
                     }
              }
+		    	}
             };
 
        for (var i = 0; i<oTab.tBodies[0].rows.length; i++) {
@@ -271,7 +271,7 @@ if (file_exists($filename)&&filesize($filename)>0) {
                  		<li><a href="">个人中心</a></li>
                  		<li><a href="">账号设置</a></li>
                  		<li><a href="">意见反馈</a></li>
-                 		<li><a href="">退出</a></li>
+                 		<li><a href="index1.php">退出</a></li>
                  	</ul>
                  </div>
 			</div><div id="top_title">

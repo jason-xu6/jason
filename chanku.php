@@ -1,6 +1,4 @@
 <?php
-   
-   
      $users[]=array('id'=>1,'username'=>'king','age'=>12,'sex'=>'男');
      $users[]=array('id'=>2,'username'=>'sfdng','age'=>54,'sex'=>'男');
      $users[]=array('id'=>3,'username'=>'df','age'=>162,'sex'=>'男');

@@ -6,7 +6,9 @@ if (file_exists($filename)&&filesize($filename)>0) {
 	$string=file_get_contents($filename);
 	$mesInfo=unserialize($string);
 	$out=$mesInfo[$id]["surplus"];
- }
+    echo ("当前库存：".$out); 
+    echo "<br>";
+}
 
 ?>
 <!DOCTYPE html>
@@ -22,7 +24,13 @@ if (file_exists($filename)&&filesize($filename)>0) {
             
             oBtn.onclick=function()
             {
-            	
+            	var haiyou="<?php echo $out ?>"-oout.value;
+            	if (haiyou<0) {
+            		alert("库存不够");
+            	}else{
+            		alert("库存还剩："+haiyou);
+            		window.location.href="update.php?value="+haiyou+"&id="+"<?php echo $id ?>";
+            	}
             };
 		};
 	</script>

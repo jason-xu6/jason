@@ -219,7 +219,7 @@ if (file_exists($filename)&&filesize($filename)>0) {
                  		<li><a href="">个人中心</a></li>
                  		<li><a href="">账号设置</a></li>
                  		<li><a href="">意见反馈</a></li>
-                 		<li><a href="">退出</a></li>
+                 		<li><a href="index1.php">退出</a></li>
                  	</ul>
                  </div>
 			</div><div id="top_title">

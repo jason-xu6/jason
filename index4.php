@@ -24,7 +24,6 @@ if (file_exists($filename)&&filesize($filename)>0) {
 		margin:0;
 	}
 	#warehouse_wrap{
-		position: relative;
 		width:1200px;
 		height:700px;
 		background-color:#f3f3f3;
@@ -83,13 +82,10 @@ if (file_exists($filename)&&filesize($filename)>0) {
 		background-color:#2a7b97;
 	}
 	#centent_nav p{
+		text-align:center;
 		padding-left: 10px;
 		background-color:#45889f;
 		line-height: 40px;
-		text-align:center;
-	}
-	#centent_nav .active{
-		background-color:#2a7b97;
 	}
 	#fotter{
 		width:395px;
@@ -169,65 +165,48 @@ if (file_exists($filename)&&filesize($filename)>0) {
 		font-size: 60px;
 		text-shadow: 10px 10px 10px #397f9a;
 	}
-	#top_title span a{
-		text-decoration:none;
-	}
 	#centent_center p{
-		width: 100%;
+		width: 238px;
 		height: 40px;
 		line-height: 40px;
-		margin-left: 20px;
+		margin-left: 273px;
 	}
-	#centent_center .center_add{
+	#centent_center #center_seach{
 		height:24px;
 	}
-	#tab{
-		position: absolute;
-		left: 238px;
-		top: 122px;
+	#centent_center #seach_btn{
+		cursor:pointer;
+		height: 28px;
+		width: 66px;
+		margin-left: -10px;
+		background-color: #00779e;
+		color: #fff;
+		font-family: "微软雅黑";
+		box-shadow: 5px 5px 5px;
+		border-radius: 5px 5px;
 	}
-    #tab tr{
-    	height:30px;
-    }
-    #form-dis{
-    	display: block;
-    }
-    #submit{
-    	text-align:center;
-    	cursor:pointer;
-    	background-color:#218dd1;
-    	padding:3px 5px;
-    	border-radius: 5px 5px;
-    }
+	#centent_nav .active{
+		background-color:#2a7b97;
+	}
 	</style>
 	<script>
-	window.onload=function(){
-       var oTab=document.getElementById("tab");
-       var num=document.getElementById("num");
-       var submit=document.getElementById("submit");
-       var oldColor="";
-       var oldColor1="";
-       for (var i = 0; i<oTab.tBodies[0].rows.length; i++) {
-       	   oTab.tBodies[0].rows[i].onmouseover=function(){
-       	    oldColor=this.style.background;
-       	    oldColor1=this.style.color;
-       	   	this.style.background="#013749";
-       	   	this.style.color="#fff";
-       	   };
-       	   oTab.tBodies[0].rows[i].onmouseout=function(){
-       	   	this.style.background=oldColor;
-       	   	this.style.color=oldColor1;
-       	   };
-       }
-       submit.onclick=function()
-       {
-       	if (num.value.length!=6) {
-       		alert("请输入正确的值");
-       		return false;
-       	}
-       };
-          
-       };
+		window.onload=function(){
+	       var oTab=document.getElementById("tab");
+	       var oldColor="";
+	       var oldColor1="";
+	       for (var i = 0; i<oTab.tBodies[0].rows.length; i++) {
+	       	   oTab.tBodies[0].rows[i].onmouseover=function(){
+	       	    oldColor=this.style.background;
+	       	    oldColor1=this.style.color;
+	       	   	this.style.background="#013749";
+	       	   	this.style.color="#fff";
+	       	   };
+	       	   oTab.tBodies[0].rows[i].onmouseout=function(){
+	       	   	this.style.background=oldColor;
+	       	   	this.style.color=oldColor1;
+	       	   };
+	       }
+		};
 	</script>
 </head>
 <body>
@@ -244,47 +223,26 @@ if (file_exists($filename)&&filesize($filename)>0) {
                  	</ul>
                  </div>
 			</div><div id="top_title">
-				<span><a href="index1.html">民大科技</a></span>
+				<span>民大科技</span>
 			</div>
 		</div>
 		<div id="warehouse_centent">
 			<div id="centent_nav">
-			    <p>仓库管理人员，您好</p>
+			    <p>收银人员，您好</p>
 				<ul>
-					<li><a href="index2.php">主页</a></li>
+					<li><a href="" class="active">主页</a></li>
 					<li><a href="index2-se.php">库存查询</a></li>
-					<li><a href=""  class="active">商品入库</a></li>
+					<li><a href="index2-in.php">商品入库</a></li>
 					<li><a href="index2-de.php">商品出库</a></li>
 					<li><a href="">关于退货</a></li>
 					<li><a href="">关于我们</a></li>
 				</ul>
 			</div>
 			<div id="centent_center">
-		<form action="doReceive.php?act=addMessage" method="POST" id="form-dis">
-			<table>
-				<thead>
-					<tr>
-						<th>商品编号</th>
-						<th>商品名称</th>
-						<th>商品价格</th>
-						<th>商品库存</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><input type="text" name="num" id="num" placeholder="请填入编号"></td>
-						<td><input type="text" name="username" id="username" placeholder="请填入名称"></td>
-						<td><input type="text" name="price" id="price" placeholder="请填入价格"></td>
-						<td><input type="text" name="surplus" id="surplus" placeholder="请填入库存"></td>
-						<td><input type="submit" value="添加商品" id="submit"></td>
-					</tr>
-				</tbody>
-			</table>
-	    </form>
-				
-					<table border="1" width="960px" cellpadding="0" cellspacing="0" bgcolor="#31a2c7" id="tab" style="text-align: center">
+				<form action="">
+					<table border="1" width="100%" height="" cellpadding="0" cellspacing="0" bgcolor="#31a2c7" id="tab" style="text-align: center">
 						<thead>
-							<tr>
+							<tr style="height: 30px">
 							    <th>序号</th>
 								<th>商品编号</th>
 								<th>商品名称</th>
@@ -305,7 +263,7 @@ if (file_exists($filename)&&filesize($filename)>0) {
 							    <?php $i++; endforeach;?>
 						</tbody>
 					</table>
-				
+				</form>
 			</div>
 		</div>
 		<div id="warehouse_fotter">
@@ -316,7 +274,6 @@ if (file_exists($filename)&&filesize($filename)>0) {
 		    </div>
 			<address>@2016.06.01 徐守杰 南区23#528</address>
 		</div>
-		
 	</div>
 </body>
 </html>

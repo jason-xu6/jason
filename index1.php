@@ -946,23 +946,23 @@
 	              wrap.style.display="none";
 			};
 				var lo=document.getElementById("submit");
-				lo.onclick=function()
-				{     
-					if (c.value==123) {
-						if (o.value=="收银管理人员") {
+				// lo.onclick=function()
+				// {     
+				// 	if (c.value==123) {
+				// 		if (o.value=="收银管理人员") {
 			           
-			          		window.location.href="index3.html";
-			          	}else if (o.value=="仓库管理人员") {
-			          		window.location.href="index2.php";
-			          	}else if (o.value=="销售管理人员") {
-			          		window.location.href="index4.html";
-			          	}
-					}else{
-			            alert("工号错误");
-					}
+			 //          		window.location.href="index3.html";
+			 //          	}else if (o.value=="仓库管理人员") {
+			 //          		window.location.href="index2.php";
+			 //          	}else if (o.value=="销售管理人员") {
+			 //          		window.location.href="index4.html";
+			 //          	}
+				// 	}else{
+			 //            alert("工号错误");
+				// 	}
 			          
 				
-				};
+				// };
 		};
 	</script>
 	<script>
@@ -1056,41 +1056,41 @@
 	  <span id="form_span_x"></span>
 	   <span id="sports"></span>
 	   <div id="login_left"><span>民大科技</span></div>
-		<form action="chanku.php" id="form_login" method="GET">
-		<fieldset id="fieldset">
-		        <span id="choice_span">请选择一个账号</span>
-			    <div id="houlai">
-					    <p>
-						     <span id="span"><img src="images/job.png" alt=""></span>
-						    <label for="number">工号：</label>
-						    <input type="text" id="number" name="number">
-						</p>
-						<p>
-						     <span id="span"><img src="images/user2.png" alt=""></span><label for="username">类型：</label>
-						     <select name="username" id="username">
-						     	<option value="收银管理人员">收银管理人员</option>
-						     	<option value="仓库管理人员">仓库管理人员</option>
-						     	<option value="销售管理人员">销售管理人员</option>
-						     </select>
-						</p>
-						<p>
-						     <span id="span"><img src="images/password.png" alt=""></span>
-						    <label for="password">密码：</label>
-						    <input type="password" id="password" name="username">
-						    <span id="remuber"><a href="">忘记密码？</a></span>
-						</p>
-						    <div id="div_login">
-							<input type="button" value="登录" id="submit">
-							</div>
-							<div id="login_buttom"><span style="margin-left:30px">系统默认工号：123，没有密码，直接登录。</span></div>
-				</div>
-		</fieldset>
+		<form action="login.php" id="form_login" method="POST">
+			<fieldset id="fieldset">
+			        <span id="choice_span">请选择一个账号</span>
+				    <div id="houlai">
+						    <p>
+							     <span id="span"><img src="images/job.png" alt=""></span>
+							    <label for="number">工号：</label>
+							    <input type="text" id="number" name="number">
+							</p>
+							<p>
+							     <span id="span"><img src="images/user2.png" alt=""></span><label for="username">类型：</label>
+							     <select name="username" id="username">
+							     	<option value="收银管理人员">收银管理人员</option>
+							     	<option value="仓库管理人员">仓库管理人员</option>
+							     	<option value="销售管理人员">销售管理人员</option>
+							     </select>
+							</p>
+							<p>
+							     <span id="span"><img src="images/password.png" alt=""></span>
+							    <label for="password">密码：</label>
+							    <input type="password" id="password" name="password">
+							    <span id="remuber"><a href="">忘记密码？</a></span>
+							</p>
+							    <div id="div_login">
+								<input type="submit" value="登录" id="submit">
+								</div>
+								<div id="login_buttom"><span style="margin-left:30px">系统默认工号：123，没有密码，直接登录。</span></div>
+					</div>
+			</fieldset>
 		</form>
 	</div>
 	<div id="register_wrap">
 	  <span id="form_span_x2"></span>
 	   <span id="sports2"></span>
-		<form action="chanku.php" id="form_login2" method="GET">
+		<form action="register.php" id="form_login2" method="POST">
 		<fieldset id="fieldset2">
 		    <span id="choice_span2">注册账号</span>
 		        <span id="X-png"><img src="images/X.png" alt=""></span>
@@ -1119,7 +1119,7 @@
 					    <input type="password" id="password2" name="password2">
 					</p>
 					    <div id="div_register">
-						<input type="button" value="注册" id="submit2">
+						<input type="submit" value="注册" id="submit2">
 						</div>
 				</div>
 		</fieldset>

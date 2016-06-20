@@ -188,6 +188,13 @@ if (file_exists($filename)&&filesize($filename)>0) {
 	#centent_nav .active{
 		background-color:#2a7b97;
 	}
+	#tab a{ 
+		color:#000;
+        text-decoration:none;
+	}
+	#tab tr:hover a{
+		color:red;
+	}
 	</style>
 	<script>
 		window.onload=function(){
@@ -219,7 +226,7 @@ if (file_exists($filename)&&filesize($filename)>0) {
                  		<li><a href="">个人中心</a></li>
                  		<li><a href="">账号设置</a></li>
                  		<li><a href="">意见反馈</a></li>
-                 		<li><a href="">退出</a></li>
+                 		<li><a href="index1.php">退出</a></li>
                  	</ul>
                  </div>
 			</div><div id="top_title">
@@ -254,7 +261,7 @@ if (file_exists($filename)&&filesize($filename)>0) {
 						<tbody>
 								<?php $i=1; foreach ($mesInfo as $key=>$now):?>
 								
-								    <tr>
+								    <tr style="height:35px">
 								        <td><?php  echo $i; ?></td>
 										<td><?php echo $now['num']; ?></td>
 										<td><?php echo $now['username']; ?></td>
