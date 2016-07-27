@@ -1,5 +1,5 @@
 <?php
-  header("content-type:text/html;charset:utf-8");
+  header("content-type:text/html;charset:gb2312");
 $number2=$_POST['number'];
 $choice=$_POST['username'];
 $password2=$_POST['password'];
@@ -21,9 +21,9 @@ $filename='register.txt';
            }
 		       
        } else {
-           echo '工号错误<br><a href="index1.php">重新登陆</a>"<br>';
+           echo '工号错误<br><a href="index.html">重新登陆</a>"<br>';
            echo "三秒钟之后自动跳转登陆界面";
-           echo "<meta http-equiv='refresh' content='3;url=index1.php'/>";
+           echo "<meta http-equiv='refresh' content='3;url=index.html'/>";
        }
        
 		
