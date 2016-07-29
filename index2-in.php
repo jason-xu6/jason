@@ -88,6 +88,9 @@ if (file_exists($filename)&&filesize($filename)>0) {
 		line-height: 40px;
 		text-align:center;
 	}
+	#top_title a{
+		text-decoration:none;
+	}
 	#centent_nav .active{
 		background-color:#2a7b97;
 	}
@@ -222,7 +225,7 @@ if (file_exists($filename)&&filesize($filename)>0) {
        submit.onclick=function()
        {
        	if (num.value.length!=6) {
-       		alert("请输入正确的值");
+       		alert("请输入六位数的商品编号");
        		return false;
        	}
        };
@@ -233,18 +236,18 @@ if (file_exists($filename)&&filesize($filename)>0) {
 <body>
 	<div id="warehouse_wrap">
 		<div id="warehouse_top">
-			<div id="top_account"><img src="images/account_64px.png" alt="">
+			<div id="top_account"><a href="index.html"><img src="images/account_64px.png" alt=""></a>
                  <div id="account_login">
                  	<ul>
                  		<li><a href="">我的账户</a></li>
                  		<li><a href="">个人中心</a></li>
                  		<li><a href="">账号设置</a></li>
                  		<li><a href="">意见反馈</a></li>
-                 		<li><a href="index1.php">退出</a></li>
+                 		<li><a href="index.html">退出</a></li>
                  	</ul>
                  </div>
 			</div><div id="top_title">
-				<span><a href="index1.html">民大科技</a></span>
+				<a href="index.html"><span>民大科技</span></a>
 			</div>
 		</div>
 		<div id="warehouse_centent">

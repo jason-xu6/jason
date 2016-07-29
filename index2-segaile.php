@@ -72,6 +72,9 @@
 		background-color:#45889f;
 		line-height: 40px;
 	}
+	#top_title a{
+		text-decoration:none;
+	}
 	#fotter{
 		width:395px;
 		margin:0 auto;
@@ -219,18 +222,18 @@
 <body>
 	<div id="warehouse_wrap">
 		<div id="warehouse_top">
-			<div id="top_account"><img src="images/account_64px.png" alt="">
+			<div id="top_account"><a href="index.html"><img src="images/account_64px.png" alt=""></a>
                  <div id="account_login">
                  	<ul>
                  		<li><a href="">我的账户</a></li>
                  		<li><a href="">个人中心</a></li>
                  		<li><a href="">账号设置</a></li>
                  		<li><a href="">意见反馈</a></li>
-                 		<li><a href="">退出</a></li>
+                 		<li><a href="index.html">退出</a></li>
                  	</ul>
                  </div>
 			</div><div id="top_title">
-				<span>民大科技</span>
+				<a href="index.html"><span>民大科技</span></a>
 			</div>
 		</div>
 		<div id="warehouse_centent">

@@ -11,7 +11,7 @@ $filename='register.txt';
      }
            $mes=compact('number2','choice','password2');
        if(in_array($mes, $mesInfo)){
-           echo "正在登陆...";
+           echo "Landing on...";
            if ($choice=="收银管理人员") {
              echo "<meta http-equiv='refresh' content='1;url=index3.php'/>";
            }elseif ($choice=="仓库管理人员") {
@@ -21,8 +21,8 @@ $filename='register.txt';
            }
 		       
        } else {
-           echo '工号错误<br><a href="index.html">重新登陆</a>"<br>';
-           echo "三秒钟之后自动跳转登陆界面";
+           echo 'error<br><a href="index.html">Re login</a><br>';
+           echo "Three seconds after the automatic jump landing interface";
            echo "<meta http-equiv='refresh' content='3;url=index.html'/>";
        }
        

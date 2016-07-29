@@ -9,7 +9,7 @@
 			$(".span_slide").click(function(){
 				var index=$(this).index();
 				i=index;
-				$("#list_slide").stop().animate({left:-index*600},600);
+				$("#list_slide").stop().animate({left:-index*600},400);
 				$(this).addClass('active_slide').siblings().removeClass('active_slide');
 
 			$("#thisisshuzi").text(index+1+"/5");
@@ -20,7 +20,7 @@
              var timer=setInterval(function(){
              	i++;
              	move();
-             }, 6000);
+             }, 2000);
               //鼠标移入停止
              $("#main_slide").mouseover(function(){
              	clearInterval(timer);
@@ -30,7 +30,7 @@
               	timer=setInterval(function(){
               		 i++;
               		 move();
-              	}, 6000);
+              	}, 2000);
               });
 			//左边点击
 		$("#btn_left_slide").click(function(){
@@ -73,7 +73,7 @@
              		$("#list_slide").css({left: 0});
              		i=1;
              	}
-             	$("#list_slide").stop().animate({left:-i*600},600);
+             	$("#list_slide").stop().animate({left:-i*600},400);
              		if (i==size-1) {
              		
              	$(".span_slide").eq(0).addClass('active_slide').siblings().removeClass('active_slide');

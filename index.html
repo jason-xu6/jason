@@ -125,12 +125,11 @@
 		display: none;
 		width:700px;
 		height:400px;
-		margin:100px auto;
+		margin-top:100px;
 		background-color: #2baadd;
-		position: absolute;
-		left:320px;
+		position: fixed;
 		border-radius: 10px 10px;
-		z-index: 999;
+		z-index: 3333333333;
 	}
 	#login_left{
 		width: 270px;
@@ -169,6 +168,7 @@
 		right:-3px;
 		top:5px;
 		cursor: pointer;
+		z-index: 99999999999;
 	}
 	#form_span_x:hover{
 		opacity: 0.8;
@@ -361,10 +361,11 @@
 		cursor: pointer;
 	}
 	#register_wrap{
-		position: absolute;
-		left:300px;
-		top:200px;
-		z-index: 999;
+		width: 400px;
+		height: 350px;
+		position: fixed;
+		top:150px;
+		z-index: 3333333333;
 		display: none;
 	}
 	#register_wrap label{
@@ -380,9 +381,6 @@
 		border-radius: 10px 10px;
 		box-shadow: 5px 5px 10px #eaeaea;
 		box-sizing: border-box;
-		position: absolute;
-		left: 185px;
-		top: -50px;
 		overflow: hidden;
 		background-color: #fff;
 	}
@@ -914,23 +912,40 @@
 	#adddiv{
 		background-color:#000;
 	}
+	.wrap-wrap{
+		position: absolute;
+		left:0px;
+		top:0px;
+		width:1349px;
+		height:1200px;
+		background-color:#ddd;
+		opacity: .6;
+		filter: alpha(opacity=20%);
+		z-index: 222222222;
+		display: none;		
+	}
 	</style>
 	<script>
 		$(document).ready(function(){
+			var width=$(document.body).outerWidth(true);
 			$("#header_btn1").click(function(){
+				alert(width);
 				$("#login_wrap").css("display","block");
-				$("#main_wrap").css("opacity",0.5);
+				$("#login_wrap").css("left",(width/2)-350);
+				$(".wrap-wrap").css("display","block");
 			});
 			$("#form_span_x").click(function(){
-				$("#main_wrap").css("opacity",1);
+				$("#login_wrap").css("display","none");
+				$(".wrap-wrap").css("display","none");
 			});
 			$("#X-png").click(function(){
 				$("#register_wrap").css("display","none");
-				$("#main_wrap").css("opacity",1);
+				$(".wrap-wrap").css("display","none");
 			});
 			$("#header_btn2").click(function(){
 				$("#register_wrap").css("display","block");
-				$("#main_wrap").css("opacity",0.5);
+				$("#register_wrap").css("left",(width/2)-200);
+				$(".wrap-wrap").css("display","block");
 			});
 		});
 	</script>
@@ -971,7 +986,11 @@
 	
 </head>
 <body>
-	<div id="login_wrap">
+    <div class="wrap-wrap"></div>
+	
+	
+  <div id="main_wrap">
+   <div id="login_wrap">
 	  <span id="form_span_x"></span>
 	   <span id="sports"></span>
 	   <div id="login_left"><span>民大科技</span></div>
@@ -1040,7 +1059,6 @@
 		</fieldset>
 		</form>
 	</div>
-  <div id="main_wrap">
 	<div id="header">
 		<div id="header_logo">
 			<span>民大科技</span>
