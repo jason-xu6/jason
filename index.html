@@ -929,7 +929,6 @@
 		$(document).ready(function(){
 			var width=$(document.body).outerWidth(true);
 			$("#header_btn1").click(function(){
-				alert(width);
 				$("#login_wrap").css("display","block");
 				$("#login_wrap").css("left",(width/2)-350);
 				$(".wrap-wrap").css("display","block");
@@ -986,11 +985,9 @@
 	
 </head>
 <body>
-    <div class="wrap-wrap"></div>
-	
-	
   <div id="main_wrap">
-   <div id="login_wrap">
+    <div class="wrap-wrap"></div>
+    <div id="login_wrap">
 	  <span id="form_span_x"></span>
 	   <span id="sports"></span>
 	   <div id="login_left"><span>民大科技</span></div>
